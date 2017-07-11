@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BaseModule</string>
+    <string name="click_me">点我</string>
+</resources>
