@@ -10,7 +10,6 @@ import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
 import io.reactivex.Observer;
-import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 /**
@@ -22,7 +21,6 @@ import io.reactivex.disposables.Disposable;
 public abstract class ErrorHandleSubscriber<T> implements Observer<T> {
 
     protected WeakReference<Context> mContext;
-    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     public ErrorHandleSubscriber(Context context) {
         this.mContext = new WeakReference<>(context);
@@ -30,7 +28,7 @@ public abstract class ErrorHandleSubscriber<T> implements Observer<T> {
 
     @Override
     public void onSubscribe(Disposable d) {
-        compositeDisposable.add(d);
+        RxDisposableManager.get().add(mContext.get(), d);
     }
 
     @Override

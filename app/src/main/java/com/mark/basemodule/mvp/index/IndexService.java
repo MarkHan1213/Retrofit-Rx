@@ -1,12 +1,12 @@
 package com.mark.basemodule.mvp.index;
 
-import com.mark.basemodule.base.BaseResponse;
 import com.mark.basemodule.base.net.Api;
 import com.mark.basemodule.mvp.bean.IndexData;
 
 import io.reactivex.Observable;
 import retrofit2.Response;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * Created by Mark.Han on 2017/7/11.
@@ -40,7 +40,10 @@ import retrofit2.http.GET;
 
 public interface IndexService {
 
+//    @GET(Api.INDEX)
+//    Observable<Response<BaseResponse<>>> getIndex();
+
     @GET(Api.INDEX)
-    Observable<Response<BaseResponse<IndexData>>> getIndex();
+    Observable<Response<IndexData>> getDedail(@Path("id") String id);
 
 }

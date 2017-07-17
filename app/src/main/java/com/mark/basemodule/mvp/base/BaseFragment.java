@@ -1,4 +1,4 @@
-package com.mark.basemodule.base;
+package com.mark.basemodule.mvp.base;
 
 import android.content.Context;
 import android.os.Bundle;

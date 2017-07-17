@@ -6,6 +6,7 @@ package com.mark.basemodule.base.net;
 
 public interface Api {
 
-    String BASE_URL = "11/";//正式
-    String INDEX = "22";//直播首页
+    String BASE_URL = "http://xxx.com/";//
+
+    String INDEX = "xxx/{id}";//
 }

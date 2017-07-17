@@ -53,9 +53,6 @@ public abstract class ProgressSubscriber<T> extends ErrorHandleSubscriber<T> imp
 
     @Override
     public void onCancelProgress() {
-        if (!compositeDisposable.isDisposed()) {
-            compositeDisposable.dispose();
-
-        }
+        RxDisposableManager.get().cancel(mContext.get());
     }
 }
